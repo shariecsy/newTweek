@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1">
+    <title>购物车</title>
+
+     <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=""/>
+
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="../libs/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../libs/assets/css/componentsStyle.css">
+    <link rel="stylesheet" href="../libs/assets/css/app.css">
+    <link rel="stylesheet" href="../libs/swiper/swiper.min.css">
+    <link rel="stylesheet" href="../libs/assets/css/sharie.css">
+    <script type="text/javascript" src="../libs/swiper/swiper.min.js"></script>
+    <script type="text/javascript" src="../libs/react.js"></script>
+    <script type="text/javascript" src="../libs/react-dom.js"></script>
+    <script type="text/javascript" src="../libs/u-ajax.js"></script>
+    <script type="text/javascript" src="../libs/sha.js"></script>
+    <script type="text/javascript" src="../libs/utils.js"></script>
+
+    <style type="text/css">
+        .clearfix{overflow: hidden;}
+        .f-left{float: left;}
+        .f-right{float: right;}
+        .am-input-group .am-form-field, .am-input-group-btn>.am-btn{height: 30px;}
+
+        .wrap-block{
+            padding-bottom: 15px;
+            background: #eee;
+        }
+        .wrap-block .inner{
+            padding: 5px 15px;
+            background: #fff;
+        }
+        .mode-box{
+            margin: 10px 0;
+        }
+        .check-box{
+            float: left;
+        }
+        .check-box label{
+            line-height: 50px;
+        }
+        .check-box label:before{
+            content:"\f1db";
+            display: inline-block;
+            font-size: 20px;
+            margin: 0 5px 0 15px;
+        }
+        .check-box input[type='checkbox']:checked + label:before{
+            content: "\f058";
+        }
+        .payways-box, .delivery-box{
+            overflow: hidden;
+        }
+        .btn-mode{
+            width: auto;
+            height: 30px;
+            line-height: 30px;
+            font-size: 14px;
+            padding: 0 10px;
+            margin-right: 10px;
+        }
+        .btn-checked{
+            color: #263248;
+            background: #fff;
+            border: 1px solid #263248;
+        }
+        .bottom-btn {
+            margin: 10px;
+            text-align: center;
+        }
+        .bottom-btn .am-btn {
+            color: #ffffff;
+            background-color: #263248;
+            border-color: #263248;
+        }
+    </style>
+</head>
+<body>
+<div id="merry"></div>
+</body>
+</html>

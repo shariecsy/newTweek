@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+	<script src="./libs/utils.js" type="text/javascript"></script>
+	<script>
+		if(LocalStorageUtil.get(STORAGE_CONSTANTS.USER_ID_KEY)){
+			window.location = window.API_SERVICE_URL+'/index/index.html';
+		}else{
+			window.location = window.API_SERVICE_URL+'/login/index.html';
+		}
+		
+	</script>
+</html>

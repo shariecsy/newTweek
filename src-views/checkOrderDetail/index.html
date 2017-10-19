@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,user-scalable=no,maximum-scale=1.0">
+    <title>订单详情</title>
+
+     <!-- Set render engine for 360 browser -->
+    <meta name="renderer" content="webkit">
+
+    <!-- No Baidu Siteapp-->
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content=""/>
+
+    <meta name="msapplication-TileColor" content="#0e90d2">
+
+    <link rel="stylesheet" href="../libs/assets/css/amazeui.min.css">
+    <link rel="stylesheet" href="../libs/assets/css/componentsStyle.css">
+    <link rel="stylesheet" href="../libs/assets/css/app.css">
+    <link rel="stylesheet" href="../libs/assets/css/sharie.css">
+    <script type="text/javascript" src="../libs/react.js"></script>
+    <script type="text/javascript" src="../libs/react-dom.js"></script>
+    <script type="text/javascript" src="../libs/u-ajax.js"></script>
+    <script type="text/javascript" src="../libs/sha.js"></script>
+    <script type="text/javascript" src="../libs/utils.js"></script>
+    <style>
+        a, a:visited{
+            color:#263248;
+        }
+        .order-details-nav {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            background: #fff;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            border-top: solid 1px #eee;
+            z-index: 3;
+            font-size:14px;
+        }
+        .order-nav-left {
+            text-align: center;
+        }
+        .order-nav-left span {
+            color: #ff4040;
+            font-size: 18px;
+        }
+        .order-nav-right {
+            background: #ff4040;
+            font-size: 18px;
+            color: #fff;
+            text-align: center;
+        }
+        .order-details-person {
+            width: 100%;
+            background: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            border-bottom: solid 1px #eee;
+            margin-bottom: 10px;
+        }
+        .person-content {
+            width: 100%;
+            font-size: 14px;
+            position:relative;
+        }
+        .payment-container i{
+            position:absolute;
+            top:50%;
+            transform:translate(0,-50%);
+        }
+        .payment-container .addr-text{
+            padding-left:10%;
+            font-size:14px;
+        }
+        .payment-container .am-icon-map-marker{
+            left:0;
+        }
+        .payment-container .am-icon-angle-right{
+            right:0;
+        }
+        .addr_icon {
+            width: .4rem;
+            height: .4rem;
+            display: block;
+            float: left;
+            background: red;
+        }
+        .addr_size, .addr_size2 {
+            width: 90%;
+            float: left;
+        }
+        .addr_size2 {
+            margin-top: .1rem;
+        }
+        .addr_size2 span {
+            color: #06a6f8;
+        }
+        .order-details-payment {
+            border-top: solid 1px #eee;
+            border-bottom: solid 1px #eee;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #fff;
+            font-size:14px;
+            margin-bottom: 10px;
+        }
+        .payment-wrap1{
+            position:relative;
+        }
+        .payment-wrap1-left {
+            width: 40%;
+            text-align: left;
+            position:absolute;
+            top:50%;
+            left:0;
+            transform:translate(0,-50%);
+        }
+        .payment-wrap1-right {
+            width: 60%;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .payment-wrap1-size1 {
+            color: #555555;
+            text-align: right;
+            margin-bottom: .06rem;
+        }
+        .order-details-content{
+            width: 100%;
+            border-top: solid 1px #eee;
+            border-bottom: solid 1px #eee;
+            background-color: #fff;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        .details-title {
+            padding: 10px;
+            border-bottom: solid 1px #eee;
+        }
+        .details-title-size {
+            float: left;
+        }
+        .details-title-price {
+            float: right;
+        }
+        .details-title-price span {
+            color: #ff4040;
+        }
+        .details-content-wrap {
+            padding: 10px;
+        }
+        .details-content-prod:last-child {
+            border-bottom: none;
+        }
+        .prod-wrap {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 0;
+        }
+        .prod-pic {
+            width: 20.3%;
+            height: 100%;
+            border: solid 1px #eee;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .prod-pic img {
+            width: 100%;
+            vertical-align: top;
+        }
+        .prod-cont {
+            width: 79.7%;
+            height: 100%;
+            padding-left: 10%;
+            box-sizing: border-box;
+        }
+        .prod-name {
+            width: 100%;
+            font-size: 14px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .prod-price {
+            font-size: 12px;
+            color: #888888;
+            margin-top: .2rem;
+        }
+        .sale-price {
+            float: left;
+        }
+        .sale-price i {
+            color: #ff3e3e;
+            font-style: normal;
+        }
+        .price-num {
+            float: right;
+        }
+        .order-details-remarks {
+            padding: 10px;
+            box-sizing: border-box;
+            border: solid 1px #eee;
+            background-color: #fff;
+            margin-bottom: 10px;
+            font-size:14px;
+        }
+        .remarks-left {
+            width: 30%;
+        }
+        .remarks-right {
+            width: 70%;
+        }
+        .remarks-right input {
+            width: 100%;
+            border: none;
+        }
+        .order-details-footer {
+            border-top: solid 1px #eee;
+            padding: 0 10px;
+            background-color: #fff;
+        }
+        .footer-title {
+            border-bottom: solid 1px #eee;
+            padding:10px 0 ;
+            font-size:14px;
+        }
+        .footer-title-left {
+            float: left;
+        }
+        .footer-title-right {
+            float: right;
+            color: #ff4040;
+        }
+        .footer-cont {
+            padding: 10px 0;
+        }
+        .footer-cont-size {
+            font-size: 12px;
+        }
+        .footer-cont-left {
+            float: left;
+            color: #888888;
+        }
+        .footer-cont-right {
+            float: right;
+            color: #ff4040;
+        }
+        .padding-blank{
+            height: 50px;
+        }
+        .am-header{
+            position:fixed;
+        }
+        .main-body{
+            margin-top: 50px;
+        }
+        .order-details-invoice {
+            font-size:14px;
+            margin-bottom: 10px;
+            padding: 0 10px;
+            border-top: solid 1px #eee;
+            border-bottom: solid 1px #eee;
+            background-color: #fff;
+        }
+        .invoice-title {
+            padding:10px 0 ;
+            overflow:hidden;
+        }
+        .invoice-left {
+            float: left;
+        }
+        .invoice-right {
+            float: right;
+        }
+        .invoice-content {
+            font-size:14px;
+            padding: 10px 0;
+            box-sizing: border-box;
+            /*display: none;*/
+            border-top: solid 1px #eee;
+        }
+        .invoice-type {
+            padding:10px 0;
+        }
+        .invoice-input {
+        }
+        .invoice-input input {
+            width: 100%;
+            border: solid 1px #DADADA;
+            font-size: 14px;
+            box-sizing: border-box;
+            border-radius: 4px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="merry"></div>
+</body>
+</html>

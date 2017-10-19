@@ -1,0 +1,28 @@
+{
+  "code":0,
+  "data":{
+    "personal":{
+      "name":"陈**",
+      "male":"女",
+      "relation":"本人",
+      "birth":"1950-01-01",
+      "img_url":""
+    },
+    "family":[
+      {
+        "name":"陈**",
+        "male":"男",
+        "relation":"父亲",
+        "birth":"1950-01-01",
+        "img_url":""
+      },
+      {
+        "name":"林**",
+        "male":"女",
+        "relation":"母亲",
+        "birth":"1950-01-01",
+        "img_url":""
+      }
+    ]
+  }
+}

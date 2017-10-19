@@ -1,0 +1,176 @@
+@charset "utf-8";
+@import "_config";
+
+@import '_toast';
+@import '_modal';
+@import '_numberbox';
+
+
+html, body, div, span, table, tbody, tr, th, td, em, img, strong, h1, h2, h3, h4, h5, h6, p, a, dl, dd, dt, ol, ul, li, form, label, input, textarea, button, b, i, u,sup{ margin: 0; padding: 0; list-style: none; outline: none; }
+h1, h2, h3, h4, h5, h6, b{ font-weight: 400; }
+a, img{ text-decoration: none; border: 0; }
+body{ font-family: $global-font-family; color: $global-body-color; background: $global-background-color; font-size: $global-font-size; }
+
+html,body{height:100%;background: $global-background-color;}
+
+a{ color: nth($global-link, 1); font-size: $global-font-size;
+  &:link{ text-decoration: none; }
+  &:visited{ text-decoration: none; color: nth($global-link, 4); }
+  &:hover{ text-decoration: none; color: nth($global-link, 4); }
+  &:active{ text-decoration: none; color: nth($global-link, 4); }
+}
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-align: right;
+  padding: 0 22px 0 0;
+  border: none;
+  color: #4a515f;
+  text-indent: .01px;
+  text-overflow: '';
+  white-space: nowrap;
+  cursor: pointer;
+  direction: rtl;
+  height: 24px;
+  background: none;
+  border: none;
+  outline: none;
+  position: relative;
+  z-index: 2;
+}
+table{ border-collapse: collapse; border-spacing: 0; width: 100%; }
+.block{
+  display:block;
+}
+.none{
+  display:none;
+}
+.f-left{ float: left; }
+.f-right{ float: right }
+.clear{ clear: both; }
+.clearfix{
+  &:after{
+    @include clear();
+  }
+}
+//*************************input输入框placeholder提示颜色*****************/
+//input placeholder默认颜色，ie10或以上
+// WebKit browsers
+::-webkit-input-placeholder{ color: $global-placeholder; }
+// Mozilla Firefox 4 to 18 */
+:-moz-placeholder{ color: $global-placeholder; opacity: 1; }
+// Mozilla Firefox 19+
+::-moz-placeholder{ color: $global-placeholder; opacity: 1; }
+// Internet Explorer 10+
+:-ms-input-placeholder{ color: $global-placeholder !important; }
+//去掉ie文本框的叉叉和密码输入框的眼睛图标（兼容模式不管用）
+::-ms-clear, ::-ms-reveal{ display: none; }
+//********************内容主容器*********************************/
+//.container{ width: $global-width; margin: 0 auto; }
+
+.middle {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.display-box{
+  display: -webkit-box;
+}
+.box-flex {
+  box-flex: 1;
+  -webkit-box-flex: 1;
+}
+
+/*********************按钮颜色***********************/
+.am-btn-primary{
+  background-color: $active-color;
+  border-color: $active-color;
+}
+.am-btn.am-round{
+  border-radius: 0;
+}
+.am-btn:focus, .am-btn:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+/*默认图*/
+.tips-icon {
+  width: 206px;
+  height: 206px;
+  overflow: hidden;
+  display: inline-block;
+  //background: url(../images/sprites-new.png) no-repeat;
+  background-size: 100% auto;
+}
+
+/*弹窗样式*/
+.layer-container{
+  position:fixed;
+  transform: translate3d(0, -52%, 0);
+  zoom: 1;
+  background: #fff;
+  width: 86%;
+  top: 50%;
+  left: 7%;
+  overflow: hidden;
+  border-radius: 8px;
+  z-index: 3;
+}
+.layer-container.block{
+  display:block;
+}
+.layer-body{
+  height: 100%;
+  padding: 0 16px;
+  overflow: auto;
+  text-justify: auto;
+  text-align: justify;
+  position: relative;
+  background: #fff;
+}
+.layer-background{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  z-index: 2;
+  display:none;
+}
+.layer-background.block{
+  display:block;
+}
+.layer-title{
+  width: 100%;
+  margin: 15px 0;
+  color: #989cab;
+  font-size:24px;
+  text-align: center;
+  position:relative;
+}
+.layer-close{
+  position:absolute;
+  top:0;
+  right:0;
+}
+.layer-btn{
+  display:inline-block;
+}
+.layer-button a,.layer-button a:focus,.layer-button a:active,.layer-button a:visited{
+  color:#333;
+}
+.alert-loading{
+  background:transparent;
+}
+.alert-loading .layer-body{
+  background:transparent;
+}
+.alert-loading .layer-text{
+  text-align:center;
+}

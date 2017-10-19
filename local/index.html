@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Hello Amaze UI</title>
+
+		<!-- Set render engine for 360 browser -->
+		<meta name="renderer" content="webkit">
+
+		<!-- No Baidu Siteapp-->
+		<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+		<link rel="icon" type="image/png" href="assets/i/favicon.png">
+
+		<!-- Add to homescreen for Chrome on Android -->
+		<meta name="mobile-web-app-capable" content="yes">
+		<link rel="icon" sizes="192x192" href="../libs/assets/i/app-icon72x72@2x.png">
+
+		<!-- Add to homescreen for Safari on iOS -->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<meta name="apple-mobile-web-app-title" content="Amaze UI" />
+		<link rel="apple-touch-icon-precomposed" href="../dist/libs/assets/i/app-icon72x72@2x.png">
+
+		<!-- Tile icon for Win8 (144x144 + tile color) -->
+		<meta name="msapplication-TileImage" content="../dist/libs/assets/i/app-icon72x72@2x.png">
+		<meta name="msapplication-TileColor" content="#0e90d2">
+
+		<link rel="stylesheet" href="../dist/libs/assets/css/amazeui.min.css">
+		<link rel="stylesheet" href="../dist/libs/assets/css/app.css">
+		<link rel="stylesheet" href="../dist/libs/swiper/swiper.min.css">
+		<script type="text/javascript" src="../dist/libs/swiper/swiper.min.js"></script>
+		<style>
+			.swiper-container {
+				height: 180px;
+			}
+			/**
+          * Navbar Theme: app
+          */
+			
+			.am-navbar-app a {
+				color: #b8c1d2;
+			}
+			
+			.am-navbar-app .am-navbar-nav {
+				background-color: #ffffff;
+			}
+			
+			.am-navbar-app .am-navbar-actions {
+				background-color: #0d86c4;
+			}
+			
+			.am-navbar-app .am-navbar-actions a {
+				border-bottom: 1px solid #0b6fa2;
+			}
+			/**
+          * Header Theme: app
+          */
+			
+			.am-header-app {
+				background-color: #708bff;
+			}
+			
+			.am-header-app .am-header-title {
+				color: #fff;
+			}
+			
+			.am-header-app .am-header-title a {
+				color: #fff;
+			}
+			
+			.am-header-app .am-header-icon {
+				font-size: 20px;
+			}
+			
+			.am-header-app .am-header-nav {
+				color: #eeeeee;
+			}
+			
+			.am-header-app .am-header-nav>a {
+				display: inline-block;
+				min-width: 36px;
+				text-align: center;
+				color: #eeeeee;
+			}
+			
+			.am-header-app .am-header-nav>a+a {
+				margin-left: 5px;
+			}
+			
+			.am-header-app .am-header-nav .am-btn {
+				margin-top: 9px;
+				height: 31px;
+				padding: 0 0.5em;
+				line-height: 30px;
+				font-size: 14px;
+				vertical-align: top;
+			}
+			
+			.am-header-app .am-header-nav .am-btn .am-header-icon {
+				font-size: inherit;
+			}
+			
+			.am-header-app .am-header-nav .am-btn-default {
+				color: #999999;
+			}
+			
+			.am-header-app .am-header-nav-title,
+			.am-header-app .am-header-nav-title+.am-header-icon {
+				font-size: 14px;
+			}
+			
+			.am-header-nav-center {
+				padding-top: 5px;
+				margin-left: auto;
+				margin-right: auto;
+				width: 70%;
+			}
+			
+			.main-body {
+				margin-bottom: 49px;
+				margin-top: 49px;
+			}
+			
+			.icon-btn-nav-block {
+				padding: 5px;
+			}
+			
+			.box {
+				height: 40px;
+				color: #eee;
+				line-height: 40px;
+				text-align: center;
+				vertical-align: middle;
+				font-weight: bold;
+				transition: all .2s ease;
+			}
+			
+			.icon-btn {
+				display: block;
+				margin-left: auto;
+				margin-right: auto;
+			}
+			
+			.icon-btn-title {
+				font-size: 14px;
+				color: #000000;
+				line-height：14px;
+			}
+			
+			.am-titlebar-title-font {
+				font-size: 14px;
+				color: #000000;
+				line-height：14px;
+			}
+			
+			.icon-btn-title-left {
+				height: 30px font-size: 14px;
+				color: #000000;
+				line-height: 120%;
+				text-align: left;
+			}
+			
+			.icon-btn-title-left-cost {
+				height: 20px font-size: 18px;
+				color: #ff9300;
+				line-height：120%;
+				text-align: left;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<header data-am-widget="header" class="am-header am-header-app am-header-fixed">
+
+				<div class="am-header-nav-center">
+					<input type="text" class="am-form-field am-round" placeholder="搜索医生" />
+				</div>
+
+				<div class="am-header-right am-header-nav">
+					<a href="javascript:void(0);" class="">
+						<i class="am-header-icon am-icon-minus-square-o"></i>
+					</a>
+				</div>
+			</header>
+
+			<div id="body" class="main-body">
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" /></div>
+						<div class="swiper-slide"><img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" /></div>
+						<div class="swiper-slide"><img src="http://s.amazeui.org/media/i/demos/bing-3.jpg" /></div>
+					</div>
+					<div class="swiper-pagination"></div>
+
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+
+					<div class="swiper-scrollbar"></div>
+				</div>
+
+				<div class="icon-btn-nav-block">
+					<ul class="am-avg-sm-4">
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+						<li class="box">
+							<div>
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<span class="icon-btn-title">挂号</span>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div>
+					<div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+						<h2 class="am-titlebar-title ">
+	                            <span class="am-titlebar-title-font">网上药店（支持医保在线支付）</span>
+	                        </h2>
+
+						<nav class="am-titlebar-nav">
+							<a href="#more">查看全部 &raquo;</a>
+						</nav>
+					</div>
+					<div class="icon-btn-nav-block">
+						<ul class="am-avg-sm-3">
+							<li class="box">
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<div class="icon-btn-title-left">远方有一个地方那里种有我们的梦想</div>
+								<div class="icon-btn-title-left-cost">17.5</div>
+							</li>
+							<li class="box">
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<div class="icon-btn-title-left">远方有一个地方那里种有我们的梦想</div>
+								<div class="icon-btn-title-left-cost">17.5</div>
+							</li>
+							<li class="box">
+								<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+								<div class="icon-btn-title-left">远方有一个地方那里种有我们的梦想</div>
+								<div class="icon-btn-title-left-cost">17.5</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div>
+					<div data-am-widget="titlebar" class="am-titlebar am-titlebar-default">
+						<h2 class="am-titlebar-title ">
+	                            <span class="am-titlebar-title-font">健康服务</span>
+	                        </h2>
+					</div>
+					<div class="icon-btn-nav-block">
+						<ul class="am-avg-sm-4">
+							<li class="box">
+								<div>
+									<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+									<span class="icon-btn-title">挂号</span>
+								</div>
+							</li>
+							<li class="box">
+								<div>
+									<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+									<span class="icon-btn-title">挂号</span>
+								</div>
+							</li>
+							<li class="box">
+								<div>
+									<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+									<span class="icon-btn-title">挂号</span>
+								</div>
+							</li>
+							<li class="box">
+								<div>
+									<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+									<span class="icon-btn-title">挂号</span>
+								</div>
+							</li>
+							<li class="box">
+								<div>
+									<span class="am-icon-btn am-warning am-icon-warning icon-btn"></span>
+									<span class="icon-btn-title">挂号</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div data-am-widget="tabs" class="am-tabs am-tabs-d2">
+					<ul class="am-tabs-nav am-cf">
+						<li class="am-active">
+							<a href="#">最新消息</a>
+						</li>
+						<li class="">
+							<a href="#">曾挂号医院</a>
+						</li>
+						<li class="">
+							<a href="#">曾挂号医生</a>
+						</li>
+					</ul>
+					<div class="am-tabs-bd">
+						<ul>
+							<li>1</li>
+							<li>2</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div data-am-widget="navbar" class="am-navbar am-cf am-navbar-app " id="">
+				<ul class="am-navbar-nav am-cf am-avg-sm-4">
+					<li>
+						<a href="tel:123456789" class="">
+							<span class="am-icon-home"></span>
+							<span class="am-navbar-label">首页</span>
+						</a>
+					</li>
+					<li>
+						<a href="###" class="">
+							<span class="am-icon-comments"></span>
+							<span class="am-navbar-label">消息</span>
+						</a>
+					</li>
+					<li>
+						<a href="###" class="">
+							<span class="am-icon-user"></span>
+							<span class="am-navbar-label">我的</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+
+		</div>
+	</body>
+
+</html>

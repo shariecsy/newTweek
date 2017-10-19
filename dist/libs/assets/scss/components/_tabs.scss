@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import "_config";
+
+.ucs-tabs {
+  .ucs-tabs-bar {
+    &:after {
+      @include clear()
+    }
+    border-bottom: 1px solid #f3f3f3;
+    height: 40px;
+    position: relative;
+    li {
+      cursor: pointer;
+      float: left;
+      font-size: 16px;
+      height: 40px;
+      line-height: 43px;
+      padding: 0 40px;
+      text-align: center;
+      //带有icon时
+      i {
+        display: inline-block;
+        width: 20px;
+        @include height(20px);
+        vertical-align: middle;
+        margin-right: 5px;
+        background: #708bff;
+      }
+      &.ucs-tabs-active {
+        background: #fff;
+        //border-left: 1px solid #f3f3f3;
+        //border-right: 1px solid #f3f3f3;
+        border-bottom: 2px solid #708bff;
+        color: #708bff;
+      }
+    }
+  }
+  .ucs-tabs-content {
+    padding: 10px;
+    .ucs-tabs-tabpane {
+      display: none;
+      &:first-child {
+        display: block;
+      }
+    }
+  }
+}
